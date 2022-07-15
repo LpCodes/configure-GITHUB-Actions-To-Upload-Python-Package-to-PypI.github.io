@@ -3,7 +3,9 @@
 
 ## Authors
 
-- [@LpCodes](https://github.com/LpCodes)
+- [@LpCodes](https://github.com/LpCodes) 
+
+ ![](https://api.visitorbadge.io/api/VisitorHit?user=LpCodes&repo=configure-GITHUB-Actions-To-Upload-Python-Package-to-PypI.github.io&countColor=%237B1E7A)
 
 
 ## Steps
