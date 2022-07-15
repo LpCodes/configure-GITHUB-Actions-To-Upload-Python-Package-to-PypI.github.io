@@ -19,10 +19,11 @@
 8. The push would start only when u push a commit with tag
 9. In TWINE_PASSWORD Enter Token generated from PypI which you should save in Settings of current repository navigate to secrets
 10. Create new secret & save the token generated from PypI
-11. Use this in TWINE_PASSWORD as TWINE_PASSWORD: {{ secrets.whatevernameugaveforsavingtoken }} add **$**  in front of ""{{"" unable to edit in markdown. 
+11. Use this in TWINE_PASSWORD dont forget to add variable formatting Unable to add in markdown
 
-\
-\
+
+
+
 
 
     
