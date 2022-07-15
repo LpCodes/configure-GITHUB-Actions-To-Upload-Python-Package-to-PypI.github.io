@@ -18,6 +18,9 @@
 6. A new yml file will get created inside workflows folder
 7. Delete All the contents & Copy paste the below content & commit
 8. The push would start only when u push a commit with tag
+9. In TWINE_PASSWORD Enter Token generated from PypI which you should save in Settings of current repository navigate to secrets
+10. Create new secret & save the token generated from PypI
+11. Use this in TWINE_PASSWORD as TWINE_PASSWORD: ${{ secrets.whatevernameugaveforsavingtoken }}
 
     
         name: Upload Python Package
