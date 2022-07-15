@@ -1,4 +1,3 @@
-
 # Easiest Way to configure GITHUB Actions To Upload Python Package to PypI  
 
 ## Authors
@@ -20,9 +19,10 @@
 8. The push would start only when u push a commit with tag
 9. In TWINE_PASSWORD Enter Token generated from PypI which you should save in Settings of current repository navigate to secrets
 10. Create new secret & save the token generated from PypI
-11. Use this in TWINE_PASSWORD as TWINE_PASSWORD: {{ secrets.whatevernameugaveforsavingtoken }} add **$**  in front of ""{{"" unable to edit in markdown
+11. Use this in TWINE_PASSWORD as TWINE_PASSWORD: {{ secrets.whatevernameugaveforsavingtoken }} add **$**  in front of ""{{"" unable to edit in markdown. 
 
-
+\
+\
 
 
     
@@ -53,11 +53,11 @@
             
             
     
-## Contributing
+## Contributing     
 
-Contributions are always welcome! Help to Improve the doc 
+Contributions are always welcome! Help to Improve the doc   
+\
 Create Pull Requests for adding more/extra info
-
 
 
 
