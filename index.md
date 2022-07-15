@@ -1,37 +1,52 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/LpCodes/configure-GITHUB-Actions-To-Upload-Python-Package-to-PypI.github.io/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Easiest Way to configure GITHUB Actions To Upload Python Package to PypI  
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Authors
 
-### Markdown
+- [@LpCodes](https://github.com/LpCodes)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
-```markdown
-Syntax highlighted code block
+## Steps
 
-# Header 1
-## Header 2
-### Header 3
+1. Create your desired package
+2. Upload to GitHub
+3. Open your repository on GitHub & Click on Actions
+4. Select New Workflow
+5. Select Publish Python Package
+6. A new yml file will get created inside workflows folder
+7. Delete All the contents & Copy paste the below content & commit
+8. The push would start only when u push a commit with tag
 
-- Bulleted
-- List
+    
+        name: Upload Python Package
+        
+        on:
+          push:
+            tags:
+            - '*'
+        jobs:
+          deploy:
+            runs-on: ubuntu-20.04
+        
+            steps:
+            - uses: actions/checkout@v2
+        - uses: actions/setup-python@v2
+        - name: Install dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install setuptools wheel twine
+        - name: Build and publish
+          env:
+            TWINE_USERNAME: __token__
+            TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
+          run: |
+            python setup.py sdist bdist_wheel
+            twine upload --repository testpypi dist/* --skip-existing
+    
+## Contributing
 
-1. Numbered
-2. List
+Contributions are always welcome! Help to Improve the doc 
 
-**Bold** and _Italic_ and `Code` text
 
-[Link](url) and ![Image](src)
-```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/LpCodes/configure-GITHUB-Actions-To-Upload-Python-Package-to-PypI.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
