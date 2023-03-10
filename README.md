@@ -51,12 +51,14 @@ jobs:
 
 8. The push would start only when you push a commit with a tag. To create a tag, use the following command: ```git tag <tag_name>```
 
-## Contributing
-Contributions are always welcome! If you have suggestions or improvements to make, please create a pull request
-Please make sure to update tests as appropriate.
-
 9. In the YAML file, replace ${{ secrets.TEST_PYPI_API_TOKEN }} with the name of the PyPI API token you saved in the repository's secrets.
 
 10. To create a PyPI API token, navigate to your PyPI account's settings and create a new token. Save the token's value as a secret in your repository's settings.
 
 11. Use this in TWINE_PASSWORD, and don't forget to add variable formatting.
+
+## Contributing
+Contributions are always welcome! If you have suggestions or improvements to make, please create a pull request
+Please make sure to update tests as appropriate.
+
+
