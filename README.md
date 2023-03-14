@@ -18,8 +18,8 @@ Uploading your Python package to PyPI can be a tedious task. However, you can au
 
 5. A new YAML file will get created inside the .github/workflows folder.
 
-6. Delete all the contents of the YAML file and copy and paste the following content:
-```python
+Delete all the contents of the YAML file and copy and paste the following content:
+```
 name: Upload Python Package
 
 on:
@@ -29,7 +29,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -46,12 +46,13 @@ jobs:
         python setup.py sdist bdist_wheel
         twine upload --repository testpypi dist/* --skip-existing
 
+
 ```
 7. Commit the changes.
 
 8. The push would start only when you push a commit with a tag. To create a tag, use the following command: ```git tag <tag_name>```
 
-9. In the YAML file, replace ${{ secrets.TEST_PYPI_API_TOKEN }} with the name of the PyPI API token you saved in the repository's secrets.
+9. In the YAML file, replace ${{ secrets.TEST_PYPI_API_TOKEN }} with the name of the PyPI API token you saved in the repository's secrets..
 
 10. To create a PyPI API token, navigate to your PyPI account's settings and create a new token. Save the token's value as a secret in your repository's settings.
 
